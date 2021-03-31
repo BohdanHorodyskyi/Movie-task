@@ -1,0 +1,123 @@
+<header>
+    <h1>Movies library</h1>
+  </header>
+
+      <a href="#" (click)="openModal(template)">
+        <div class="but">Add movie</div>
+      </a>
+
+<ng-template #template>
+
+    <form>
+      <button type="button" class="close pull-right x"  (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+        <h4>Enter title</h4>
+        <input type="text" id="text" name="title" [(ngModel)] = "title">
+        <h4>Enter description</h4>
+        <br>
+        <textarea name="des" id="area" cols="30" rows="10" [(ngModel)]="des"></textarea>
+        <input type="file" name="image" id="image" (change)="onSelectFile($event)">
+
+        <br>
+        <button type="submit" id="sub"  (click)="addMov()">Add</button>
+
+       
+      </form>
+
+</ng-template>
+        
+
+      <main>
+    <div class="container">
+      <p class="title">The Godfather</p>
+      <div class="photo">
+        <img src="assets/img/1.jpg" alt="" class="image">
+      </div>
+      <div class="desc">Stanley Kubrick once described Francis Ford Coppola's adaptation of Mario Puzo's novel as the best
+        film ever made, and we're hardly going to argue.</div>
+    </div>
+    <div class="container">
+      <p class="title">The Empire Strikes Back</p>
+      <div class="photo">
+        <img src="assets/img/2.jpg" alt="" class="image">
+      </div>
+      <div class="desc">The original "this one's darker" sequel, and by far the strongest of the saga. Not just because the
+        baddies win (temporarily), or because it Force-slammed us with that twist ("No, I am your father").</div>
+    </div>
+    <div class="container">
+      <p class="title">The Dark Knight</p>
+      <div class="photo">
+        <img src="assets/img/3.jpg" alt="" class="image">
+      </div>
+      <div class="desc">Easily as influential on the genre as that other summer '08 comic-book movie, Iron Man, Christopher
+        Nolan's Batman Begins sequel works wonders because he never saw it as a superhero film. It's closer to a Michael
+        Mann crime epic — except instead of Pacino and De Niro in a diner, you get a bloke dressed as a bat and a
+        psychotic clown in a police interrogation room. With, er, Aaron Eckhart as Val Kilmer...</div>
+    </div>
+    <div class="container">
+      <p class="title">The Shawshank</p>
+      <div class="photo">
+        <img src="assets/img/4.jpg" alt="" class="image">
+      </div>
+      <div class="desc">The warm, leathery embrace of Morgan Freeman's narration... The reassuringly Gary Cooper-ish rumple
+        of Tim Robbins' face... Odd that a movie which features such harshness and tragedy should remain a feel-good
+        perennial — even odder when you consider it was a box-office flop on release. Few directorial debuts are so deftly
+        constructed; no surprise, then, that Frank Darabont has yet to top it.</div>
+    </div>
+    <div class="container">
+      <p class="title">Pulp Fiction</p>
+      <div class="photo">
+        <img src="assets/img/5.jpg" alt="" class="image">
+      </div>
+      <div class="desc">If Reservoir Dogs was a blood-spattered calling card, Pulp Fiction saw Quentin Tarantino kick our
+        front door off its hinges — and then get applauded for doing it with such goddamn panache. It wore its numerous
+        influences on its sleeve and yet felt utterly, invigoratingly fresh and new. We happy? Yeah, we happy.</div>
+    </div>
+    <div class="container">
+      <p class="title">Goodfellas</p>
+      <div class="photo">
+        <img src="assets/img/6.jpg" alt="" class="image">
+      </div>
+      <div class="desc">Where Coppola embroiled us in the politics of the Mafia elite, Martin Scorsese drew us into the
+        treacherous but seductive world of the Mob's foot soldiers. And its honesty was as impactful as its sudden
+        outbursts of (usually Joe Pesci-instigated) violence. Not merely via Henry Hill's (Ray Liotta) narrative, but also
+        Karen's (Lorraine Bracco) perspective: when Henry gives her a gun to hide, she admits, "It turned me on."</div>
+    </div>
+    <div class="container">
+      <p class="title">Raiders Of The Lost Ark</p>
+      <div class="photo">
+        <img src="assets/img/7.jpg" alt="" class="image">
+      </div>
+      <div class="desc">In '81, it must have sounded like the ultimate pitch: the creator of Star Wars teams up with the
+        director of Jaws to make a rip-roaring, Bond-style adventure starring the guy who played Han Solo, in which the
+        bad guys are the evillest ever (the Nazis) and the MacGuffin is a big, gold box which unleashes the power of God.
+        It still sounds like the ultimate pitch.</div>
+    </div>
+    <div class="container">
+      <p class="title">Jaws</p>
+      <div class="photo">
+        <img src="assets/img/8.jpg" alt="" class="image">
+      </div>
+      <div class="desc">1975
+        Forty-five years young, and Spielberg's breakthrough remains the touchstone for event-movie cinema. Not that any
+        studio these days would dare put out a summer blockbuster that's half monster-on-the-rampage disaster, half
+        guys-bonding-on-a-fishing-trip adventure. Maybe that's why it's never been rebooted. Or just because it's
+        genuinely unsurpassable.</div>
+    </div>
+
+   
+
+    
+    <div class="container" *ngFor="let mov of movies">
+        <p class="title">{{mov.title}}</p>
+        <div class="photo">
+            <img [src]="mov.image" alt="" class="image">
+        </div>
+        
+        <div class="desc">{{mov.des}}</div>
+      </div>
+  </main>
+  
+  
+  

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "fundrising-f7bdf": {
+      "hosting": {
+        "movie": [
+          "fundrising-f7bdf"
+        ]
+      }
+    }
+  }
+}
